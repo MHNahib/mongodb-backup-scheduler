@@ -1,8 +1,6 @@
 const homeRoutes = require("./home.routes");
 const mongodbBackuproutes = require("./mongodbBackup.routes");
-const { notFoundcontroller } = require("../controllers");
-
-const notFoundRoute = notFoundcontroller;
+const { notFoundcontroller: notFoundRoute } = require("../controllers");
 
 module.exports = {
   homeRoutes,
