@@ -16,6 +16,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, "/public")));
 
 // cron job
+// this is running for every minute
+// for once a month use 0 0 1 * *
 cron.schedule("* * * * *", () => {
   backupAsGzip();
 });
