@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+var cron = require("node-cron");
 
 // import route
 const {
@@ -7,11 +8,17 @@ const {
   notFoundRoute,
   mongodbBackuproutes,
 } = require("./src/routes");
+const { backupAsGzip } = require("./src/service/mongodbBackup.service");
 
 const app = express();
 
 // public folder
 app.use(express.static(path.join(__dirname, "/public")));
+
+// cron job
+cron.schedule("* * * * *", () => {
+  backupAsGzip();
+});
 
 // routes
 app.use("/", homeRoutes);
