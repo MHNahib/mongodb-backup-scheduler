@@ -1,6 +1,6 @@
 const response = require("../utils/response");
 const { StatusCodes } = require("http-status-codes");
-const { backupAsGzip } = require("../service/mongodbBackup.service");
+const { backupAsGzip } = require("../service/mongodbBackupController.service");
 
 // index controller
 const backupAsGzipController = (req, res) => {
