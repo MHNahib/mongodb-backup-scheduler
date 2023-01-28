@@ -1,4 +1,4 @@
-## :octocat
+## :octocat:
 
 ```bash
   https://github.com/MHNahib/mongodb-backup-scheduler.git
